@@ -1,0 +1,15 @@
+D:\PrimitierMods\PMAPI\PMAPI\TestMod\obj\IndustrialHorizons1.0Bug\net6.0\IndustrialHorizons.csproj.AssemblyReference.cache
+D:\PrimitierMods\PMAPI\PMAPI\TestMod\obj\IndustrialHorizons1.0Bug\net6.0\IndustrialHorizons.GeneratedMSBuildEditorConfig.editorconfig
+D:\PrimitierMods\PMAPI\PMAPI\TestMod\obj\IndustrialHorizons1.0Bug\net6.0\IndustrialHorizons.AssemblyInfoInputs.cache
+D:\PrimitierMods\PMAPI\PMAPI\TestMod\obj\IndustrialHorizons1.0Bug\net6.0\IndustrialHorizons.AssemblyInfo.cs
+D:\PrimitierMods\PMAPI\PMAPI\TestMod\obj\IndustrialHorizons1.0Bug\net6.0\IndustrialHorizons.csproj.CoreCompileInputs.cache
+D:\PrimitierMods\PMAPI\PMAPI\TestMod\bin\IndustrialHorizons1.0Bug\net6.0\IndustrialHorizons.deps.json
+D:\PrimitierMods\PMAPI\PMAPI\TestMod\bin\IndustrialHorizons1.0Bug\net6.0\IndustrialHorizons.dll
+D:\PrimitierMods\PMAPI\PMAPI\TestMod\bin\IndustrialHorizons1.0Bug\net6.0\IndustrialHorizons.pdb
+D:\PrimitierMods\PMAPI\PMAPI\TestMod\bin\IndustrialHorizons1.0Bug\net6.0\PMAPI.dll
+D:\PrimitierMods\PMAPI\PMAPI\TestMod\bin\IndustrialHorizons1.0Bug\net6.0\PMAPI.pdb
+D:\PrimitierMods\PMAPI\PMAPI\TestMod\obj\IndustrialHorizons1.0Bug\net6.0\IndustrialHorizons.csproj.CopyComplete
+D:\PrimitierMods\PMAPI\PMAPI\TestMod\obj\IndustrialHorizons1.0Bug\net6.0\IndustrialHorizons.dll
+D:\PrimitierMods\PMAPI\PMAPI\TestMod\obj\IndustrialHorizons1.0Bug\net6.0\refint\IndustrialHorizons.dll
+D:\PrimitierMods\PMAPI\PMAPI\TestMod\obj\IndustrialHorizons1.0Bug\net6.0\IndustrialHorizons.pdb
+D:\PrimitierMods\PMAPI\PMAPI\TestMod\obj\IndustrialHorizons1.0Bug\net6.0\ref\IndustrialHorizons.dll

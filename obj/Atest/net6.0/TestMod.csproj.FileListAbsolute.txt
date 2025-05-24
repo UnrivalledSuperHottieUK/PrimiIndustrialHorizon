@@ -1,0 +1,15 @@
+D:\PrimitierMods\PMAPI\PMAPI\TestMod\bin\Atest\net6.0\TestMod.deps.json
+D:\PrimitierMods\PMAPI\PMAPI\TestMod\bin\Atest\net6.0\TestMod.dll
+D:\PrimitierMods\PMAPI\PMAPI\TestMod\bin\Atest\net6.0\TestMod.pdb
+D:\PrimitierMods\PMAPI\PMAPI\TestMod\bin\Atest\net6.0\PMAPI.dll
+D:\PrimitierMods\PMAPI\PMAPI\TestMod\bin\Atest\net6.0\PMAPI.pdb
+D:\PrimitierMods\PMAPI\PMAPI\TestMod\obj\Atest\net6.0\TestMod.csproj.AssemblyReference.cache
+D:\PrimitierMods\PMAPI\PMAPI\TestMod\obj\Atest\net6.0\TestMod.GeneratedMSBuildEditorConfig.editorconfig
+D:\PrimitierMods\PMAPI\PMAPI\TestMod\obj\Atest\net6.0\TestMod.AssemblyInfoInputs.cache
+D:\PrimitierMods\PMAPI\PMAPI\TestMod\obj\Atest\net6.0\TestMod.AssemblyInfo.cs
+D:\PrimitierMods\PMAPI\PMAPI\TestMod\obj\Atest\net6.0\TestMod.csproj.CoreCompileInputs.cache
+D:\PrimitierMods\PMAPI\PMAPI\TestMod\obj\Atest\net6.0\TestMod.csproj.CopyComplete
+D:\PrimitierMods\PMAPI\PMAPI\TestMod\obj\Atest\net6.0\TestMod.dll
+D:\PrimitierMods\PMAPI\PMAPI\TestMod\obj\Atest\net6.0\refint\TestMod.dll
+D:\PrimitierMods\PMAPI\PMAPI\TestMod\obj\Atest\net6.0\TestMod.pdb
+D:\PrimitierMods\PMAPI\PMAPI\TestMod\obj\Atest\net6.0\ref\TestMod.dll

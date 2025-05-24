@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "TestMod/1.0.0": {
+        "dependencies": {
+          "PMAPI": "1.0.0"
+        },
+        "runtime": {
+          "TestMod.dll": {}
+        }
+      },
+      "PMAPI/1.0.0": {
+        "runtime": {
+          "PMAPI.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TestMod/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PMAPI/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
