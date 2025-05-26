@@ -1,18 +1,17 @@
 using Il2Cpp;
 using UnityEngine;
-using MelonLoader;
 
-namespace IndustrialHorizons;
+//namespace IndustrialHorizons;
 
-public class OreBeh : MonoBehaviour
+public class CentrifugeBeh : MonoBehaviour
 {
-  public OreBeh(System.IntPtr ptr)
+  public CentrifugeBeh(System.IntPtr ptr)
     : base(ptr)
   {
   }
 
   public Substance refinedSubstance { get; set; }
-  public double meltTemperature { get; set; } = 600;
+  //public double meltTemperature { get; set; } = 600;
 
   private void OnInitialize()
   {
@@ -27,11 +26,9 @@ public class OreBeh : MonoBehaviour
   private void Update()
   {
     bool flag = !this.updated;
-    // Remove later
-    //MelonLogger.Msg("velocity" + this.cubeBase.pit);
     if (flag)
     {
-      bool flag2 = this.cubeBase.heat.GetCelsiusTemperature() > meltTemperature;
+      bool flag2 = this.cubeBase.heat.GetCelsiusTemperature() > 100;
       if (flag2)
       {
         this.cubeBase.ChangeSubstance(this.refinedSubstance);

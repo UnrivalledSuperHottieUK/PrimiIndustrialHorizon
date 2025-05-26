@@ -62,30 +62,30 @@ namespace IndustrialHorizons
             this.RegisterSteel();
             this.RegisterStainlessSteel();
             CubeMerge.compoundablePairs.Add(new Il2CppSystem.ValueTuple<Substance, Substance>(this.chromite, Substance.Niter), new Il2CppSystem.ValueTuple<float, Substance, float>(1f, this.chromium, 0.6f));
-            CubeMerge.compoundablePairs.Add(new Il2CppSystem.ValueTuple<Substance, Substance>(this.coal, Substance.Iron), new Il2CppSystem.ValueTuple<float, Substance, float>(0.5f, this.steel, 1.2f));
-            CubeMerge.compoundablePairs.Add(new Il2CppSystem.ValueTuple<Substance, Substance>(this.chromium, this.steel), new Il2CppSystem.ValueTuple<float, Substance, float>(0.1f, this.stainlesssteel, 1.1f));
+            CubeMerge.compoundablePairs.Add(new Il2CppSystem.ValueTuple<Substance, Substance>(this.coal, Substance.Iron), new Il2CppSystem.ValueTuple<float, Substance, float>(0.5f, this.steel, 1f));
+            CubeMerge.compoundablePairs.Add(new Il2CppSystem.ValueTuple<Substance, Substance>(this.chromium, this.steel), new Il2CppSystem.ValueTuple<float, Substance, float>(0.1f, this.stainlesssteel, 1f));
             CubeMerge.compoundablePairs.Add(new Il2CppSystem.ValueTuple<Substance, Substance>(this.ilmenite, Substance.Sulfur), new Il2CppSystem.ValueTuple<float, Substance, float>(0.8f, this.titaniumoxide, 0.7f));
 
             // Registering our substances in ore generation
             CustomOreManager.RegisterCustomOre(this.chalcocite, new CustomOreManager.CustomOreParams
             {
-                chance = 0.3f,
+                chance = 0.2f,
                 substanceOverride = Substance.Sulfur,
-                maxSize = 0.4f,
-                minSize = 0.2f,
+                maxSize = 0.3f,
+                minSize = 0.1f,
                 alpha = 1f
             });
             CustomOreManager.RegisterCustomOre(this.ilmenite, new CustomOreManager.CustomOreParams
 			{
-                chance = 0.06f,
+                chance = 0.03f,
 				substanceOverride = Substance.TungstenOre,
-				maxSize = 0.7f,
-				minSize = 0.2f,
+				maxSize = 0.6f,
+				minSize = 0.4f,
 				alpha = 1f
 			});
             CustomOreManager.RegisterCustomOre(this.chromite, new CustomOreManager.CustomOreParams
 			{
-				chance = 0.04f,
+				chance = 0.06f,
 				substanceOverride = Substance.Niter,
 				maxSize = 0.5f,
 				minSize = 0.1f,
@@ -96,15 +96,15 @@ namespace IndustrialHorizons
 				chance = 0.1f,
 				substanceOverride = Substance.Clay,
 				maxSize = 0.8f,
-				minSize = 0.1f,
+				minSize = 0.2f,
 				alpha = 1f
 			});
             CustomOreManager.RegisterCustomOre(this.coal, new CustomOreManager.CustomOreParams
             {
                 chance = 0.05f,
                 substanceOverride = Substance.Stone,
-                maxSize = 0.1f,
-                minSize = 1.9f,
+                maxSize = 1.4f,
+                minSize = 0.8f,
                 alpha = 1f
             });
         }
@@ -127,7 +127,7 @@ namespace IndustrialHorizons
             CustomMaterialManager.RegisterMaterial(cmat);
 
             // Getting substance params that our substance is based on and modifying them
-            var param = SubstanceManager.GetParameter(Substance.Pyrite).MemberwiseClone().Cast<SubstanceParameters.Param>();
+            var param = SubstanceManager.GetParameter(Substance.Sulfur).MemberwiseClone().Cast<SubstanceParameters.Param>();
 
             // overwriteDeez
             param.displayNameKey = "SUB_CALCOCITE";
@@ -136,13 +136,14 @@ namespace IndustrialHorizons
             param.strength = 90f;
             param.stiffness = 30f;
             param.hardness = 2.5f;
-            var description = "Melt deez at 600 degree to make copper";
-
             // Registering our substance as custom substance
             this.chalcocite = CustomSubstanceManager.RegisterSubstance("chalcocite", param, new CustomSubstanceParams
             {
                 enName = "Chalcocite (Cu2S)",
                 jpName = "Chalcocite (Cu2S)",
+                enGuide = "Heat it to 600 degree to make copper",
+                jpGuide = "Heat it to 600 degree to make copper",
+
                 behInit = delegate (CubeBase cb)
                 {
                     // Adding test behavior
@@ -173,8 +174,8 @@ namespace IndustrialHorizons
             param.displayNameKey = "SUB_COPPER";
             param.material = cmat.name;
             param.density = 5.65f;
-			param.strength = 90f;
-			param.stiffness = 850f;
+			param.strength = 900f;
+			param.stiffness = 85f;
 			param.hardness = 2.5f;
             param.thermalConductivity = 401f;
             param.softeningPoint = 600f;
@@ -184,6 +185,8 @@ namespace IndustrialHorizons
             {
                 enName = "Copper (Cu)",
                 jpName = "Copper (Cu)",
+                enGuide = "Good heat conductibility/electric conductor, can be forged at 600 degrees",
+                jpGuide = "Good heat conductibility/electric conductor, can be forged at 600 degrees",
                 
             });
         }
@@ -205,8 +208,8 @@ namespace IndustrialHorizons
             param.displayNameKey = "SUB_ILMENITE";
             param.material = cmat.name;
             param.density = 5.65f;
-			param.strength = 30f;
-			param.stiffness = 400f;
+			param.strength = 300f;
+			param.stiffness = 40f;
 			param.hardness = 5.6f;
 
             // Registering our substance as custom substance
@@ -214,6 +217,8 @@ namespace IndustrialHorizons
             {
                 enName = "Ilmenite (FeTiO3)",
                 jpName = "Ilmenite (FeTiO3)",
+                enGuide = "Combine with sulfur to make TitaniumOxide",
+                jpGuide = "Combine with sulfur to make TitaniumOxide",
                 
             });
         }
@@ -245,6 +250,8 @@ namespace IndustrialHorizons
             {
                 enName = "Titanium oxide (TiO2)",
                 jpName = "Titanium oxide (TiO2)",
+                enGuide = "Heat it to 1400 degrees to make Titanium",
+                jpGuide = "Heat it to 1400 degrees to make Titanium",
                 behInit = delegate(CubeBase cb)
                 {
                     // Adding test behavior
@@ -273,8 +280,8 @@ namespace IndustrialHorizons
             param.displayNameKey = "SUB_TITANIUM";
             param.material = cmat.name;
             param.density = 4.5f;
-			param.strength = 100f;
-			param.stiffness = 2000f;
+			param.strength = 2000f;
+			param.stiffness = 100f;
 			param.hardness = 6f;
             param.softeningPoint = 1200f;
 
@@ -283,6 +290,8 @@ namespace IndustrialHorizons
             {
                 enName = "Titanium (Ti)",
                 jpName = "Titanium (Ti)",
+                enGuide = "A lightweight but durable material, can be forged at 1200 degrees",
+                jpGuide = "A lightweight but durable material, can be forged at 1200 degrees",
                 
             });
         }
@@ -313,6 +322,8 @@ namespace IndustrialHorizons
             {
                 enName = "Chromite (FeCr2O4)",
                 jpName = "Chromite (FeCr2O4)",
+                enGuide = "Combine with Niter to make Chromium",
+                jpGuide = "Combine with Niter to make Chromium",
                 
             });
         }
@@ -334,8 +345,8 @@ namespace IndustrialHorizons
             param.displayNameKey = "SUB_CHROMIUM";
             param.material = cmat.name;
             param.density = 7.2f;
-			param.strength = 130f;
-			param.stiffness = 1700f;
+			param.strength = 1650f;
+			param.stiffness = 190f;
 			param.hardness = 8.5f;
 
             // Registering our substance as custom substance
@@ -343,6 +354,8 @@ namespace IndustrialHorizons
             {
                 enName = "Chromium (Cr)",
                 jpName = "Chromium (Cr)",
+                enGuide = "Combine with Steel to make Stainless Steel",
+                jpGuide = "Combine with Steel to make Stainless Steel",
                 
             });
         }
@@ -358,7 +371,7 @@ namespace IndustrialHorizons
             CustomMaterialManager.RegisterMaterial(cmat);
 
             // Getting substance params that our substance is based on and modifying them
-            var param = SubstanceManager.GetParameter(Substance.Pyrite).MemberwiseClone().Cast<SubstanceParameters.Param>();
+            var param = SubstanceManager.GetParameter(Substance.QuartzSand).MemberwiseClone().Cast<SubstanceParameters.Param>();
 
             // overwriteDeez
             param.displayNameKey = "SUB_BAUXITE";
@@ -373,6 +386,8 @@ namespace IndustrialHorizons
             {
                 enName = "Bauxite (Al(OH)3)",
                 jpName = "Bauxite (Al(OH)3)",
+                enGuide = "Heat it to 850 degrees to make aluminum",
+                jpGuide = "Heat it to 850 degrees to make aluminum",
                 behInit = delegate(CubeBase cb)
                 {
                     // Adding test behavior
@@ -401,16 +416,18 @@ namespace IndustrialHorizons
             param.displayNameKey = "SUB_ALUMINUM";
             param.material = cmat.name;
             param.density = 2.7f;
-			param.strength = 40f;
-			param.stiffness = 1200f;
+			param.strength = 1200f;
+			param.stiffness = 70f;
 			param.hardness = 2.75f;
-            param.softeningPoint = 660f;
+            param.softeningPoint = 700f;
 
             // Registering our substance as custom substance
             this.aluminum = CustomSubstanceManager.RegisterSubstance("aluminum", param, new CustomSubstanceParams
             {
                 enName = "Aluminum (Al)",
                 jpName = "Aluminum (Al)",
+                enGuide = "Lightweight metal excellent for aircraft, can be forged at 700 degrees",
+                jpGuide = "Lightweight metal excellent for aircraft, can be forged at 700 degrees",
                 
             });
         }
@@ -437,7 +454,9 @@ namespace IndustrialHorizons
 			this.coal = CustomSubstanceManager.RegisterSubstance("coal", param, new CustomSubstanceParams
 			{
 				enName = "Coal (C)",
-				jpName = "Coal (C)"
+				jpName = "Coal (C)",
+                enGuide = "Fuel, burns stronger than wood and for longer. Combine with iron to make steel.",
+                jpGuide = "Fuel, burns stronger than wood and for longer. Combine with iron to make steel.",
 			});
 		}
 
@@ -458,8 +477,8 @@ namespace IndustrialHorizons
             param.displayNameKey = "SUB_STEEL";
             param.material = cmat.name;
             param.density = 7.8f;
-			param.strength = 220f;
-			param.stiffness = 200f;
+			param.strength = 2400f;
+			param.stiffness = 130f;
 			param.hardness = 6.2f;
             param.softeningPoint = 3000f;
 
@@ -468,7 +487,8 @@ namespace IndustrialHorizons
             {
                 enName = "Steel (Fe)",
                 jpName = "Steel (Fe)",
-                
+                enGuide = "Durable material combine with chromium to make stainless steel, can be forged at 3000 degrees",
+                jpGuide = "Durable material combine with chromium to make stainless steel, can be forged at 3000 degrees",
             });
         }
 
@@ -489,20 +509,21 @@ namespace IndustrialHorizons
             param.displayNameKey = "SUB_STAINLESSSTEEL";
             param.material = cmat.name;
             param.density = 7.8f;
-			param.strength = 310f;
-			param.stiffness = 280f;
+			param.strength = 2600f;
+			param.stiffness = 140f;
 			param.hardness = 6.5f;
-            param.softeningPoint = 5000f;
+            param.softeningPoint = 4000f;
 
             // Registering our substance as custom substance
             this.stainlesssteel = CustomSubstanceManager.RegisterSubstance("stainlesssteel", param, new CustomSubstanceParams
             {
                 enName = "StainlessSteel (Fe)",
                 jpName = "StainlessSteel (Fe)",
-                
+                enGuide = "Extremely Durable material immune to water and slime, can be forged at 4000 degrees",
+                jpGuide = "Extremely Durable material immune to water and slime, can be forged at 4000 degrees",
             });
         }
-        public override void OnUpdate()
+        /* public override void OnUpdate()
         {
             // Spawning stuff above our head
             if (Input.GetKeyDown(KeyCode.L))
@@ -530,6 +551,6 @@ namespace IndustrialHorizons
             // Writing test data that will be stored in save file
             if (Input.GetKeyDown(KeyCode.X))
                 ExtDataManager.SetData(new OurData(UnityEngine.Random.RandomRangeInt(1, 100)));
-        }
+        } */
     }
 }
